@@ -34,7 +34,7 @@ console.log(getInactiveUsers(users)); // [объект Moore Hensley, объек
 // 5 Получить пользоваля (не массив) по email (поле email, он уникальный).
 
 const getUserWithEmail = (users, email) => {
-  return users.filter(user => user.email === email);
+  return users.find(user => user.email === email);
 };
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
@@ -62,7 +62,7 @@ console.log(calculateTotalBalance(users)); // 20916
 // 8 Массив имен всех пользователей у которых есть друг с указанным именем.
 const getUsersWithFriend = (users, friendName) => {
   return users
-    .filter(user => user.friends.indexOf(friendName) !== -1)
+    .filter(user => user.friends.includes(friendName))
     .map(user => user.name);
 };
 
